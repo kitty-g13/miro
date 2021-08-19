@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.5rem;
+  font-family: 'Prompt', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+.container {
+  min-width: 100vh;
+  margin: 0 15rem;
+  padding: 0 6rem;
+}
+.hue-shift {
+  animation: hue-shift 5s infinite alternate;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.nav {
+  height: 8rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+.nav-item {
+  margin-right: 5rem;
+}
+.nav-item:last-child {
+  margin-right: 0;
+}
+.nav-link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+.nav-link:hover {
+  opacity: 0.6;
+}
+.logo {
+  display: block;
+  width: 8rem;
+}
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 8%;
+  background-image: linear-gradient(to bottom right, #1c1c1c, #000);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: 100vh;
+  background-image: url("./images/bg-pat.png");
+  background-size: cover;
+  opacity: 0.4;
+  z-index: -1;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.content-details {
+  max-width: 80%;
+}
+.title {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  line-height: 4.5rem;
+  letter-spacing: 0.3rem;
+}
+.paragraph {
+  color: #929fc5;
+  margin-bottom: 2rem;
+  line-height: 2rem;
+}
+.search {
+  margin-bottom: 3rem;
+}
+.search input {
+  border: none;
+  border-radius: 5rem;
+  padding: 1.8rem;
+  outline: none;
+}
+
+.search-btn {
+  width: 13rem;
+  background-image: linear-gradient(to right, #ff8305, #ffccb0);
+  color: #fff;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-image: linear-gradient(to left, #ff8305, #ffccb0);
+}
+.sm-list {
+  display: flex;
+}
+.sm-link {
+  color: #929fc5;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #929fc5;
+  border-radius: 50%;
+  display: flex;
+  margin-right: 2.5rem;
+}
+.sm-link i {
+  margin: auto;
+}
+.sm-link:hover {
+  background-image: linear-gradient(to right, #a971ff, #00f0ff);
+  color: #fff;
+}
+.image-group {
+  text-align: center;
+  position: relative;
+}
+.blob-large {
+  animation: move-up 2s infinite alternate;
+  position: absolute;
+  right: 10%;
+  z-index: -1;
+}
+.phone {
+  max-width: 80%;
+  height: auto;
+  position: relative;
+  top: 30%;
+}
+.blob-bean {
+  position: absolute;
+  width: 25%;
+  top: 2.5rem;
+  left: -1rem;
+  z-index: 10;
+  animation: move-down 2s infinite alternate;
+}
+.blob {
+  position: absolute;
+  z-index: -1;
+}
+.blob-1 {
+  top: -11rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.blob-2 {
+  top: 15rem;
+  left: -17rem;
+}
+.blob-3 {
+  right: 5rem;
+  bottom: -24rem;
+}
+.blob-4 {
+  left: -21rem;
+  bottom: -17rem;
+}
+@keyframes move-up {
+  from{
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(2rem);
+  }
+}
+@keyframes move-down {
+  from{
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes hue-shift {
+  from{
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    align-items: center;
+  }
+  .landing-page {
+    min-width: 100vh;
+    overflow-x: hidden;
+    padding: 1rem;
+  }
+  .container {
+    margin: 0;
+    padding: 1rem;
+  }
+  .nav-item {
+    display: none;
+  }
+  .content {
+    grid-template-columns: 1fr;
+    width: 100vh;
+    overflow: hidden;
+  }
+  .content-details {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .title {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    line-height: 3.5rem;
+  }
+  .paragraph {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .image-group {
+    margin-top: 10rem;
+  }
+  .phone {
+    width: 50%;
+  }
+  .blob-large {
+    width: 50%;
+    margin-right: 15rem;
+  }
+  .blob-bean {
+    width: 15%;
+    margin-left: 13rem;
+  }
+  .sm-link {
+    margin-bottom: 15rem;
+  }
+  .blob-1 {
+    width: 40%;
+  }
+  .blob-2 {
+    width: 40%;
+
+  }
+  .blob-3 {
+    width: 20%;
+
+  }
+  .blob-4 {
+    width: 20%;
+  }
+}
